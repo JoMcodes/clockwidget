@@ -1,0 +1,27 @@
+<body>
+
+  <div class="clock">
+    <div class="segment" id="hours">00</div>
+    <div class="segment">:</div>
+    <div class="segment" id="minutes">00</div>
+    <div class="segment">:</div>
+    <div class="segment" id="seconds">00</div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+
+      document.getElementById('hours').textContent = h;
+      document.getElementById('minutes').textContent = m;
+      document.getElementById('seconds').textContent = s;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
